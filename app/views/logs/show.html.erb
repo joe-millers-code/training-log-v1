@@ -1,0 +1,27 @@
+<section class="section">
+    <div class ="container">
+        <h1 class ="title is-1"><%= @log.title %></h1>
+
+
+         <div class="columns">
+            <div class="column is-one-fifth">
+                <%= link_to "All logs", logs_path, :class => 'button is-fullwidth is-primary' %>
+            </div>
+            <div class="column is-one-fifth">
+                <%= button_to "delete", log_path(@log), method: :delete, :class => 'button is-fullwidth' %>
+            </div>
+        </div>
+
+
+
+        <div class="box">
+        
+            <p>date: <%= @log.date %> </p>
+            <p>type: <%= @log.session_type %> </p>
+            <p>duration: <%= @log.duration %> </p>
+            <p>intensity: <%= @log.intensity %> </p>
+            <p>description: <%= @log.description %> </p>
+
+        <div>
+    </div>
+</section>

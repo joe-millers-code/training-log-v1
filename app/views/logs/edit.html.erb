@@ -1,0 +1,64 @@
+
+<section class='section'>
+  <div class = "container">
+
+    <h1 class = 'title is-1 '>Edit Log</h1>
+
+    <%= form_for @log do |f| %>
+
+      <div class="field">
+        <label class="label"><%= f.label :title %></label>
+        <div class="control">
+          <%= f.text_field :title, :class => 'input' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label"><%= f.label :date %></label>
+        <div class="control">
+          <%= f.text_field :date, :class => 'input' %>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label"><%= f.label :session_type %></label>
+        <div class="control">
+          <%= f.text_field :session_type, :class => 'input' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label"><%= f.label :duration %></label>
+        <div class="control">
+          <%= f.text_field :duration, :class => 'input' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label"><%= f.label :intensity %></label>
+        <div class="select">
+          <%= f.select :intensity, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
+        </div>
+      </div>
+
+        <div class="field">
+        <label class="label"><%= f.label :description %></label>
+        <div class="control">
+          <%= f.text_area :description, :class => 'textarea' %>
+        </div>
+      </div>
+
+      
+      <div class="columns">
+        <div class="column is-one-fifth">
+          <%= f.submit "Edit Log", :class => 'button is-fullwidth is-primary' %>
+        </div>
+        <div class="column is-one-fifth">
+          <%= link_to "Cancel", logs_path, :class => 'button is-fullwidth' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</section>

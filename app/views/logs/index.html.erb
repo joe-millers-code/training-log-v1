@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-1">Training Log</h1>
+
+
+    <div class="conlumns">
+      <div class="column is-one-fifth">
+          <%= link_to "New Log", new_log_path, :class => 'button is-fullwidth is-primary' %>
+      </div>
+    </div>
+
+ <!-- make the titles a button -->
+
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Date</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+
+      <% @logs.each do |log| %>
+        <tr>
+          <td>
+            <%= link_to log.title, log, :class => 'button is-fullwidth is-primary' %>
+          </td>
+          <td>
+            <%= log.date %>
+          </td>
+          <td>
+            <%= log. description %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    
+  </div>
+</section>
