@@ -5,10 +5,13 @@
 
          <div class="columns">
             <div class="column is-one-fifth">
-                <%= link_to "All logs", logs_path, :class => 'button is-fullwidth is-primary' %>
+                <%= link_to "All Logs", logs_path, :class => 'button is-fullwidth is-primary' %>
             </div>
             <div class="column is-one-fifth">
-                <%= button_to "delete", log_path(@log), method: :delete, :class => 'button is-fullwidth' %>
+                <%= button_to "Delete", log_path, method: :delete, :class => 'button is-fullwidth' %>
+            </div>
+            <div class="column is-one-fifth">
+                <%= link_to "Edit", edit_log_path(@log), :class => 'button is-fullwidth' %>
             </div>
         </div>
 
@@ -16,11 +19,11 @@
 
         <div class="box">
         
-            <p>date: <%= @log.date %> </p>
-            <p>type: <%= @log.session_type %> </p>
-            <p>duration: <%= @log.duration %> </p>
-            <p>intensity: <%= @log.intensity %> </p>
-            <p>description: <%= @log.description %> </p>
+            <p><strong>Date:</strong> <%= @log.date %> </p>
+            <p><strong>Type:</strong> <%= @log.session_type %> </p>
+            <p><strong>Duration:</strong> <%= @log.duration %> </p>
+            <p><strong>Intensity:</strong> <%= @log.intensity %> </p>
+            <p><strong>Description:</strong> <%= @log.description %> </p>
 
         <div>
     </div>
