@@ -10,6 +10,7 @@ class LogsController < ApplicationController
 
    def index
         @logs = Log.order(sort_column + " " + sort_direction)
+        #@logs = current_user.logs.all when the user model comes in
     end
 
     def new
@@ -18,6 +19,7 @@ class LogsController < ApplicationController
 
     def create
         @log = Log.create(log_params)
+        # @log.user_id = current_user.id
         redirect_to @log
     end
 
